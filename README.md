@@ -46,3 +46,16 @@ sistema de criação de fichas de rpg
     "esModuleInterop": true,
   }
 }
+
+
+neon{
+  SELECT 
+  p.id,
+  ip.quantidade,
+  i.*
+FROM techskills.pedido AS p
+JOIN techskills.item_pedido AS ip
+  ON p.id = ip.pedido_id AND  p.id = 27
+JOIN techskills.itens AS i
+  ON ip.item_id = i.id;
+}
